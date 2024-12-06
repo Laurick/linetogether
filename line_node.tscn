@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlf12mjqsyu7f"]
+
+[ext_resource type="Script" path="res://line_node.gd" id="1_64bor"]
+[ext_resource type="Texture2D" uid="uid://d04iyfpkldmhh" path="res://icon.svg" id="2_jrg5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hnyl"]
+size = Vector2(127, 128)
+
+[node name="LineNode" type="Area2D"]
+script = ExtResource("1_64bor")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.190762, 0.190762, 0.190762, 1)
+position = Vector2(-5, 5)
+texture = ExtResource("2_jrg5q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_jrg5q")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_6hnyl")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

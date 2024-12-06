@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://n23caajtm2a4"]
+
+[ext_resource type="PackedScene" uid="uid://51ejm0pnqgh5" path="res://line_seeker/line_node.tscn" id="1_jeowj"]
+
+[node name="Riddle" type="Node2D"]
+
+[node name="LineNode" parent="." instance=ExtResource("1_jeowj")]
+position = Vector2(294, 319)
+max_connections = 2
+
+[node name="LineNode4" parent="." instance=ExtResource("1_jeowj")]
+position = Vector2(1016, 322)
+max_connections = 2
+
+[node name="LineNode2" parent="." instance=ExtResource("1_jeowj")]
+position = Vector2(645, 123)
+max_connections = 2
+
+[node name="LineNode3" parent="." instance=ExtResource("1_jeowj")]
+position = Vector2(636, 469)
+max_connections = 2

@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://wg6hxewukupt"]
+
+[ext_resource type="PackedScene" uid="uid://51ejm0pnqgh5" path="res://line_seeker/line_node.tscn" id="1_nlu0m"]
+
+[node name="LineSeeker2" type="Node2D"]
+
+[node name="LineNode" parent="." instance=ExtResource("1_nlu0m")]
+position = Vector2(309, 419)
+max_connections = 1
+
+[node name="LineNode4" parent="." instance=ExtResource("1_nlu0m")]
+position = Vector2(601, 111)
+max_connections = 1
+
+[node name="LineNode2" parent="." instance=ExtResource("1_nlu0m")]
+position = Vector2(593, 417)
+max_connections = 1
+
+[node name="LineNode3" parent="." instance=ExtResource("1_nlu0m")]
+position = Vector2(312, 109)
+max_connections = 3

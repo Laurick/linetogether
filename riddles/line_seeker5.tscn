@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpi7sd4d47esl"]
+
+[ext_resource type="PackedScene" uid="uid://ct30qty44slm4" path="res://line_seeker/line_patrol.tscn" id="1_2f6jy"]
+[ext_resource type="PackedScene" uid="uid://51ejm0pnqgh5" path="res://line_seeker/line_node.tscn" id="1_muyrn"]
+[ext_resource type="PackedScene" uid="uid://127an0vod0vy" path="res://line_seeker/line_connection.tscn" id="2_opits"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_awdaf"]
+resource_local_to_scene = true
+b = Vector2(690, 0)
+
+[node name="Riddle" type="Node2D"]
+
+[node name="LinePatrol" parent="." instance=ExtResource("1_2f6jy")]
+
+[node name="LineNode4" parent="." instance=ExtResource("1_muyrn")]
+position = Vector2(900, 102)
+max_connections = 2
+
+[node name="LineNode2" parent="." instance=ExtResource("1_muyrn")]
+position = Vector2(870, 422)
+max_connections = 2
+
+[node name="LineNode3" parent="." instance=ExtResource("1_muyrn")]
+position = Vector2(153, 477)
+max_connections = 1
+
+[node name="LineConnection2" parent="." instance=ExtResource("2_opits")]
+position = Vector2(31, 254)
+end = Vector2(690, 0)
+
+[node name="CollisionShape2D" parent="LineConnection2" index="0"]
+shape = SubResource("SegmentShape2D_awdaf")
+
+[node name="Line2D" parent="LineConnection2" index="1"]
+points = PackedVector2Array(0, 0, 690, 0)
+default_color = Color(0, 0, 0, 1)
+
+[editable path="LineConnection2"]
