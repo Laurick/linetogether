@@ -11,10 +11,15 @@ config_version=5
 [application]
 
 config/name="LineTogether"
-run/main_scene="res://level_selector.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameData="*res://GameData.gd"
+Audio="*res://components/Audio.tscn"
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://translations/translations.en.translation", "res://translations/translations.es.translation")

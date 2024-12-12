@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dxoiif0g3s1hk"]
 
-[ext_resource type="PackedScene" uid="uid://51ejm0pnqgh5" path="res://line_seeker/line_node.tscn" id="2_4f2r5"]
+[ext_resource type="PackedScene" uid="uid://51ejm0pnqgh5" path="res://components/game/line_node.tscn" id="2_4f2r5"]
 
 [node name="Riddle" type="Node2D"]
 

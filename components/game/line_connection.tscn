@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1kspj2ggpq5x"]
 
-[ext_resource type="Script" path="res://line_connection.gd" id="1_2awvc"]
+[ext_resource type="Script" path="res://components/game/line_connection.gd" id="1_2awvc"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_yxkjs"]
 resource_local_to_scene = true

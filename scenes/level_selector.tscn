@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://ye60bpuqoyv6"]
+
+[ext_resource type="Script" path="res://scenes/level_selector.gd" id="1_nxyue"]
+[ext_resource type="Script" path="res://components/ChangeVisiblility.gd" id="2_bscdd"]
+
+[node name="LevelSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nxyue")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Los nodos tienen un numero de conexiones que tienen que estar aseguradas al final de la pantalla. 
+* Cada nodo se puede enlazar con otro con el boton izquierdo
+* Con R se resetea la pantalla
+* Con D se cancela el anterior movimiento
+* Con F se cambia el tipo de conexion
+* Los nodos especiales tendrán cada uno tendra sus controles. Ver #documentacion
+
+- Nodo normal: Color va con color y tiene un numero determinado de conexiones. Las conexiones se pueden realizar haciendo click derecho  de un nodo a otro. 
+- Nodo en path: es un nodo normal que se mueve por un camino constantemente.
+- Nodo que se puede cambiar de posicion: este nodo es otro nodo normal pero se puede cambiar de posicion a voluntad con el boton derecho en un radio establecido."
+text_overrun_behavior = 2
+
+[node name="ChangeVisibilityComponent" type="Node" parent="MarginContainer/PanelContainer"]
+script = ExtResource("2_bscdd")
+
+[node name="HelpButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1071.0
+offset_top = 24.0
+offset_right = 1128.0
+offset_bottom = 55.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+toggle_mode = true
+text = "Ayuda"
+
+[connection signal="toggled" from="HelpButton" to="MarginContainer/PanelContainer/ChangeVisibilityComponent" method="change_visibility"]

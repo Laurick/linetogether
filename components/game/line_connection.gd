@@ -6,9 +6,12 @@ var segment_shape:SegmentShape2D
 
 @export var start:Vector2
 @export var end:Vector2
+
 var is_colliding: bool
 var node_start:LineNode
 var node_end:LineNode
+var max_joints:int
+var joints:int
 
 func _ready() -> void:
 	update_color(Color.CHARTREUSE)
@@ -20,9 +23,11 @@ func _ready() -> void:
 	segment_shape.b = end
 
 
-func setup(_start:Vector2, _end:Vector2):
+func setup(_start:Vector2, _end:Vector2, _max_joints:int):
 	start = _start
 	end = _end
+	max_joints = _max_joints
+	joints = 0
 
 
 func update_color(new_color:Color):
@@ -63,7 +68,7 @@ func update_line_position():
 	var diff_b = end-start
 	diff_b *= 0.05
 	var new_end = end-diff_b
-	line_2d.points[1] = new_end
+	line_2d.points[joints+1] = new_end
 	segment_shape.b = new_end
 
 
@@ -80,6 +85,19 @@ func _on_area_entered(area: Area2D) -> void:
 	is_colliding = true
 
 
-func _on_area_exited(area: Area2D) -> void:
+func _on_area_exited(_area: Area2D) -> void:
 	update_color(Color.CHARTREUSE)
 	is_colliding = false
+
+
+func get_segments() -> int:
+	return line_2d.points.size()-1
+
+
+func can_make_a_joint() -> bool:
+	return joints < max_joints
+
+
+func make_a_joint(joint_position: Vector2):
+	line_2d.points.append(joint_position)
+	joints += 1

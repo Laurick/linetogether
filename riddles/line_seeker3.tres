@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="RiddleData" load_steps=2 format=3 uid="uid://brsd2sd4b6kwy"]
+
+[ext_resource type="Script" path="res://riddles/RiddleData.gd" id="1_r7sjn"]
+
+[resource]
+script = ExtResource("1_r7sjn")
+lines = Array[int]([1, 1])

@@ -1,0 +1,123 @@
+[gd_scene load_steps=3 format=3 uid="uid://bchxq3dst4hlc"]
+
+[ext_resource type="Script" path="res://scenes/options.gd" id="1_o5v73"]
+[ext_resource type="Script" path="res://components/VersionLabel.gd" id="1_xwtbx"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o5v73")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -25.0
+offset_right = 200.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="MasterLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "MASTER_OPTIONS_LABEL"
+vertical_alignment = 1
+
+[node name="MasterHSlider" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+value = 50.0
+
+[node name="MasterValue" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicLabel2" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "MUSIC_OPTIONS_LABEL"
+vertical_alignment = 1
+
+[node name="MusicHSlider" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+value = 50.0
+
+[node name="MusicValue" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "50
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoundLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "SOUND_OPTIONS_LABEL"
+vertical_alignment = 1
+
+[node name="SoundHSlider" type="HSlider" parent="GridContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+value = 50.0
+
+[node name="SoundValue" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="GridContainer"]
+layout_mode = 2
+
+[node name="LangOptionButton" type="OptionButton" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="GridContainer"]
+layout_mode = 2
+
+[node name="ShowConnectionsCheckBox" type="CheckBox" parent="GridContainer"]
+layout_mode = 2
+text = "ACCESIBILITY_SHOW_POINTS"
+
+[node name="Control4" type="Control" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Control5" type="Control" parent="GridContainer"]
+layout_mode = 2
+
+[node name="EraseProgressButton" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "OPTIONS_CLEAR_BUTTON"
+
+[node name="Control6" type="Control" parent="GridContainer"]
+layout_mode = 2
+
+[node name="VersionLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+script = ExtResource("1_xwtbx")
+
+[connection signal="drag_ended" from="GridContainer/MasterHSlider" to="." method="_on_master_h_slider_drag_ended"]
+[connection signal="value_changed" from="GridContainer/MasterHSlider" to="." method="_on_master_h_slider_value_changed"]
+[connection signal="drag_ended" from="GridContainer/MusicHSlider" to="." method="_on_music_h_slider_drag_ended"]
+[connection signal="value_changed" from="GridContainer/MusicHSlider" to="." method="_on_music_h_slider_value_changed"]
+[connection signal="drag_ended" from="GridContainer/SoundHSlider" to="." method="_on_sound_h_slider_drag_ended"]
+[connection signal="value_changed" from="GridContainer/SoundHSlider" to="." method="_on_sound_h_slider_value_changed"]
+[connection signal="item_selected" from="GridContainer/LangOptionButton" to="." method="_on_lang_option_button_item_selected"]
+[connection signal="toggled" from="GridContainer/ShowConnectionsCheckBox" to="." method="_on_show_connections_check_box_toggled"]
+[connection signal="pressed" from="GridContainer/EraseProgressButton" to="." method="_on_erase_progress_button_pressed"]

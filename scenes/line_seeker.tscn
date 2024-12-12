@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://r1550qtixo8w"]
+
+[ext_resource type="Script" path="res://scenes/line_seeker.gd" id="1_fu8ak"]
+[ext_resource type="PackedScene" uid="uid://bchxq3dst4hlc" path="res://scenes/options.tscn" id="2_4lrci"]
+[ext_resource type="Texture2D" uid="uid://d04iyfpkldmhh" path="res://icon.svg" id="2_hp7fl"]
+
+[node name="LineSeeker" type="Node2D"]
+script = ExtResource("1_fu8ak")
+
+[node name="Nodes" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="OptionsButton" type="TextureButton" parent="CanvasLayer"]
+offset_right = 128.0
+offset_bottom = 128.0
+texture_normal = ExtResource("2_hp7fl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Control2" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Options" parent="CanvasLayer/Control2/PanelContainer" instance=ExtResource("2_4lrci")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Control2/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "OPTIONS_GAME_EXIT"
+
+[connection signal="pressed" from="CanvasLayer/OptionsButton" to="CanvasLayer/Control2" method="set_visible" binds= [true]]
+[connection signal="pressed" from="CanvasLayer/Control2/PanelContainer/Button" to="CanvasLayer/Control2" method="set_visible" binds= [false]]

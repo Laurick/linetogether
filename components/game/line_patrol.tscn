@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://03amchumt4ra"]
 
-[ext_resource type="Script" path="res://line_patrol.gd" id="1_inxhw"]
+[ext_resource type="Script" path="res://components/game/line_patrol.gd" id="1_inxhw"]
 
 [sub_resource type="Curve2D" id="Curve2D_513sd"]
 _data = {
@@ -16,17 +16,3 @@ script = ExtResource("1_inxhw")
 position = Vector2(572, 47)
 rotation = -3.07876
 rotates = false
-
-[node name="LineNode" parent="PathFollow2D"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-rotation = 3.07876
-max_connections = 1
-script = null

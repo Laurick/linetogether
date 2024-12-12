@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bpi7sd4d47esl"]
 
-[ext_resource type="PackedScene" uid="uid://ct30qty44slm4" path="res://line_seeker/line_patrol.tscn" id="1_2f6jy"]
-[ext_resource type="PackedScene" uid="uid://51ejm0pnqgh5" path="res://line_seeker/line_node.tscn" id="1_muyrn"]
-[ext_resource type="PackedScene" uid="uid://127an0vod0vy" path="res://line_seeker/line_connection.tscn" id="2_opits"]
+[ext_resource type="PackedScene" uid="uid://ct30qty44slm4" path="res://components/game/line_patrol.tscn" id="1_2f6jy"]
+[ext_resource type="PackedScene" uid="uid://51ejm0pnqgh5" path="res://components/game/line_node.tscn" id="1_muyrn"]
+[ext_resource type="PackedScene" uid="uid://127an0vod0vy" path="res://components/game/line_connection.tscn" id="2_opits"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_awdaf"]
 resource_local_to_scene = true
